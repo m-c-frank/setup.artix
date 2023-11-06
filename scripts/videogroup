@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Add user to the video group
+echo "Adding user to the video group..."
+sudo usermod -aG video "$(whoami)"

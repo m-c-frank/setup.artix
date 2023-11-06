@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Install fish shell
+echo "Installing fish shell..."
+sudo pacman -S --noconfirm fish
+
+# Change the default shell to fish
+echo "Changing the default shell to fish..."
+chsh -s "$(which fish)"

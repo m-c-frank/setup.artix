@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Install Chromium
+if sudo pacman -S chromium; then
+    echo "Chromium installed successfully."
+
+    # Inform user about manual extension installation
+    echo "Please open Chromium and manually install the desired extensions from the Chrome Web Store."
+else
+    echo "Error: Chromium installation failed."
+fi

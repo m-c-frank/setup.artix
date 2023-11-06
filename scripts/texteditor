@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Assuming that XDG_CONFIG_HOME is already set in the environment
+NVIM_CONFIG_DIR="${XDG_CONFIG_HOME}/nvim"
+
+# Install Neovim if it is not already installed
+sudo pacman -S --noconfirm neovim
+
+# Create Neovim config directory if it doesn't exist
+mkdir -p "${NVIM_CONFIG_DIR}"
+
+# Clone the Neovim configuration repository
+git clone https://github.com/m-c-frank/config.nvim "$NVIM_CONFIG_DIR"
+
+echo "Neovim setup complete."

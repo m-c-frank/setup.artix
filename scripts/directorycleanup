@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Function to clean up home directory while preserving specified directories
+cleanup_home() {
+    echo "Cleaning up the home directory..."
+    find "$HOME" -mindepth 1 -maxdepth 1 \
+         ! -name '.config' \
+         ! -name '.local' \
+         ! -name '.cache' \
+         -exec rm -rv {} +
+}
+
+# Call the cleanup function
+cleanup_home

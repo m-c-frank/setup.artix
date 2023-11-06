@@ -1,0 +1,9 @@
+#!/bin/sh
+
+./scripts/directorycleanup
+./scripts/xsetup
+./scripts/texteditor
+./scripts/customshell
+./scripts/webbrowser
+./scripts/shellfish
+./scripts/videogroup

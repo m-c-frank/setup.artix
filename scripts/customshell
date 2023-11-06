@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Define the location where the source code will reside, following the XDG Base Directory Specification
+SOURCE_DIR="$XDG_DATA_HOME/src"
+
+# Create the source directory if it doesn't exist
+mkdir -p "$SOURCE_DIR"
+
+# Clone the st source code repository
+git clone https://git.suckless.org/st "$SOURCE_DIR/st"
+
+# Compile and install st
+echo "Compiling and installing st..."
+cd "$SOURCE_DIR/st"
+sudo make clean install
