@@ -1,14 +1,25 @@
 #!/bin/sh
 
-# Function to clean up home directory while preserving specified directories
-cleanup_home() {
-    echo "Cleaning up the home directory..."
-    find "$HOME" -mindepth 1 -maxdepth 1 \
-         ! -name '.config' \
-         ! -name '.local' \
-         ! -name '.cache' \
-         -exec rm -rv {} +
-}
+cd "$HOME"
 
-# Call the cleanup function
-cleanup_home
+shopt -s dotglob
+
+for item in *; do
+
+	base_item=$(basename "$item")
+
+	echo "working on $base_item"
+
+	if [[ "$base_item" == "desktop" || "$base_item" == "Downloads" || "$base_item" == "setup.artix" || "$base_item" == ".ssh" ]]; then
+		echo "skipping $base_item"
+		continue
+	fi
+
+	echo "deleting $base_item"
+
+	sudo rm -rf -- "$item"
+done
+
+shopt -u dotglob
+
+echo "Deletion complete"

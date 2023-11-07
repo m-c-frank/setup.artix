@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install dwm dependencies
-sudo pacman -S --noconfirm xorg-server xorg-init xorg-xsetroot
+sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-xsetroot
 
 # Create the .local/src directory if it doesn't exist
 mkdir -p ~/.local/src
