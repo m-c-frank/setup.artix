@@ -3,5 +3,7 @@
 # Set the background color to black
 xsetroot -solid black
 
+xwallpaper --zoom $HOME/setup.artix/res/bg.jpg
+
 # Start dwm
 exec dwm
