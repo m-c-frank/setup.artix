@@ -1,11 +1,19 @@
 #!/bin/sh
 
-# Install Chromium
-if sudo pacman -S chromium; then
-    echo "Chromium installed successfully."
+# Ensure the system is up-to-date
+sudo pacman -Syu
 
-    # Inform user about manual extension installation
-    echo "Please open Chromium and manually install the desired extensions from the Chrome Web Store."
-else
-    echo "Error: Chromium installation failed."
+# Install yay if it isn't already installed
+if ! command -v yay &> /dev/null; then
+    echo "yay could not be found, installing..."
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay
 fi
+
+# Use yay to install Brave from the AUR
+yay -S brave-bin
+
