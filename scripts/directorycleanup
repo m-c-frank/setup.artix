@@ -10,7 +10,7 @@ for item in *; do
 
 	echo "working on $base_item"
 
-	if [[ "$base_item" == "desktop" || "$base_item" == "Downloads" || "$base_item" == "setup.artix" || "$base_item" == ".ssh" ]]; then
+	if [[ "$base_item" == ".config" || "$base_item" == "desktop" || "$base_item" == "Downloads" || "$base_item" == "setup.artix" || "$base_item" == ".ssh" ]]; then
 		echo "skipping $base_item"
 		continue
 	fi

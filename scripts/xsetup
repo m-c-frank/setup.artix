@@ -4,14 +4,14 @@
 sudo pacman -S --noconfirm xorg-server xorg-xinit xorg-xsetroot
 
 # Create the .local/src directory if it doesn't exist
-mkdir -p ~/.local/src
+mkdir -p "$HOME/.local/src"
 
 # Clone dwm if it's not already present
-git clone https://github.com/m-c-frank/dwm.git ~/.local/src/dwm
+git clone https://github.com/m-c-frank/dwm.git "$HOME/.local/src/dwm"
 
 # Compile and install dwm
-cd ~/.local/src/dwm
+cd "$HOME/.local/src/dwm"
 sudo make clean install
 
 # Copy the provided .xinitrc to the home directory
-cp ./configs/xinitrc ~/.xinitrc
+cp "$HOME/setup.artix/configs/xinitrc" "$HOME/.xinitrc"

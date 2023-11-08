@@ -1,6 +1,6 @@
 #!/bin/sh
 
-./scripts/directorycleanup
+#./scripts/directorycleanup
 ./scripts/xsetup
 ./scripts/texteditor
 ./scripts/customshell
